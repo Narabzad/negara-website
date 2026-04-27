@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI for Peer Review &middot; Negar Arabzadeh</title>
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap">
+</head>
+<body>
+  <main class="page">
+
+    <nav class="topnav">
+      <a href="index.html" class="brand">Negar Arabzadeh</a>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="research-experience.html">Research</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="talks.html">Talks</a></li>
+      </ul>
+    </nav>
+
+    <header style="margin-bottom: 3rem;">
+      <p class="subtitle" style="margin-bottom: 0.6rem;">
+        <a href="projects.html">&larr; projects</a> &middot; topic
+      </p>
+      <h1 style="font-size: clamp(40px, 6vw, 56px); margin-bottom: 1rem;">
+        AI for <span class="accent">Peer Review</span>.
+      </h1>
+      <p class="bio">
+        Reviewers draft with LLMs, LLMs refine human critiques, and the
+        line between human and machine in scientific peer review is no
+        longer binary. These projects ask better questions about the
+        provenance of reviews and the groundedness of the claims they make.
+      </p>
+    </header>
+
+    <ul class="proj-cards">
+
+      <li class="proj-card">
+        <a href="https://arxiv.org/abs/2604.14513" class="proj-photo">
+          <img src="assets/projects/peerprism_sigir_banner%20(1).png" alt="PeerPrism">
+        </a>
+        <div class="proj-body">
+          <p class="proj-meta">SIGIR 2026 &middot; Reviewer.ly</p>
+          <h3>PeerPrism</h3>
+          <p class="proj-tagline">Authorship is a continuum &mdash; not a yes/no question.</p>
+          <p>
+            A benchmark for the reality of peer review today: reviewers draft with LLMs,
+            LLMs refine human critiques, and &ldquo;was this written by AI?&rdquo; is no
+            longer binary. PeerPrism pulls apart two distinct <em>provenances</em> of
+            a review and asks both questions separately:
+          </p>
+          <ul class="proj-bullets">
+            <li><strong>Idea origin</strong> &mdash; who did the reasoning?</li>
+            <li><strong>Text origin</strong> &mdash; who wrote the words?</li>
+          </ul>
+          <p>
+            We tested <strong>20,690 reviews</strong> from ICLR &amp; NeurIPS
+            (2021&ndash;2024) across six authorship regimes &mdash; human, fully
+            synthetic, and four hybrid modes &mdash; generated with GPT-5,
+            Claude-Haiku-4.5, Gemini-2.5, o4-mini, DeepSeek-R1, and Llama-4.
+            We benchmarked seven detectors. On clean human-vs-synthetic, several do
+            well; on rewritten reviews (human ideas, AI words) they disagree wildly,
+            with the same review getting opposite verdicts.
+          </p>
+          <p>
+            The takeaway: LLM transformations leave a cyborg signature &mdash; style
+            becomes machine-like, but reasoning stays human. We need
+            <em>provenance quantification</em>, not binary detectors.
+          </p>
+          <ul class="proj-links">
+            <li><a href="https://arxiv.org/abs/2604.14513">paper</a></li>
+            <li><a href="https://github.com/ReviewerlyInc/PeerPrism">code</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="proj-card">
+        <a href="https://arxiv.org/abs/2604.17667" class="proj-photo">
+          <img src="assets/projects/peerispect.png" alt="Peerispect">
+        </a>
+        <div class="proj-body">
+          <p class="proj-meta">SIGIR 2026 (Demo) &middot; Reviewer.ly</p>
+          <h3>Peerispect</h3>
+          <p class="proj-tagline">Treating every reviewer claim as a retrieval query.</p>
+          <p>
+            Reviewers make factual claims about a paper all the time &mdash;
+            &ldquo;they don&apos;t compare against baseline X,&rdquo;
+            &ldquo;they didn&apos;t ablate Y.&rdquo; Are those claims actually
+            grounded in the manuscript? Peerispect checks. Each claim is treated
+            as a retrieval query over the submitted paper, then routed through a
+            modular pipeline: <em>extract &rarr; retrieve &rarr; verify &rarr; label</em>.
+          </p>
+          <ul class="proj-bullets">
+            <li>Ingest &mdash; parse the PDF into semantic chunks.</li>
+            <li>Extract &mdash; distill check-worthy claims from reviews.</li>
+            <li>Retrieve &mdash; find the most relevant manuscript passages.</li>
+            <li>Verify &mdash; NLI-based labeling with LLMs.</li>
+          </ul>
+          <p>
+            Each claim ends up in one of four buckets: <em>supported</em>,
+            <em>partially supported</em>, <em>contradicted</em>, or
+            <em>undetermined</em>. The output isn&apos;t a score &mdash; it&apos;s
+            an interactive interface that highlights evidence directly in the PDF,
+            so reviewers can sanity-check themselves, authors can respond with
+            receipts, and editors can audit at scale. Every retriever, reranker,
+            and verifier is swappable.
+          </p>
+          <ul class="proj-links">
+            <li><a href="https://arxiv.org/abs/2604.17667">paper</a></li>
+            <li><a href="https://github.com/Reviewerly-Inc/Peerispect">code</a></li>
+          </ul>
+        </div>
+      </li>
+
+    </ul>
+
+    <footer class="foot">
+      <span>&copy; 2026 Negar Arabzadeh</span>
+      <span><a href="projects.html">&larr; all projects</a></span>
+    </footer>
+
+  </main>
+</body>
+</html>

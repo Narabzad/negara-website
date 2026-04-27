@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Query Performance Prediction &middot; Negar Arabzadeh</title>
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap">
+</head>
+<body>
+  <main class="page">
+
+    <nav class="topnav">
+      <a href="index.html" class="brand">Negar Arabzadeh</a>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="research-experience.html">Research</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="talks.html">Talks</a></li>
+      </ul>
+    </nav>
+
+    <header style="margin-bottom: 3rem;">
+      <p class="subtitle" style="margin-bottom: 0.6rem;">
+        <a href="projects.html">&larr; projects</a> &middot; topic
+      </p>
+      <h1 style="font-size: clamp(40px, 6vw, 56px); margin-bottom: 1rem;">
+        Query Performance <span class="accent">Prediction</span>.
+      </h1>
+      <p class="bio">
+        Predicting how well a query will perform &mdash; before retrieval,
+        during retrieval, and now: as a selector for the right query
+        variant in a RAG pipeline.
+      </p>
+    </header>
+
+    <ul class="proj-cards">
+
+      <li class="proj-card">
+        <a href="https://github.com/Narabzad/QPP-4-RAG" class="proj-photo">
+          <img src="assets/projects/qpp_rag_sigir_banner%20(10)%20(1).png" alt="QPP for RAG">
+        </a>
+        <div class="proj-body">
+          <p class="proj-meta">SIGIR 2026</p>
+          <h3>Can QPP Choose the Right Query Variant?</h3>
+          <p class="proj-tagline">Pick the winner <em>before</em> paying the RAG cost.</p>
+          <p>
+            You can over-generate query variants cheaply &mdash; but running a full
+            RAG pipeline for each one is expensive. We frame Query Performance
+            Prediction (QPP) as a <em>query selector</em>: given different LLM
+            reformulations of the same information need, can QPP identify which one
+            will produce the best end-to-end RAG answer, without executing the full
+            pipeline for every variant?
+          </p>
+          <div class="proj-results">
+            <div class="proj-result">
+              <span class="num">+66%</span>
+              <span class="label">end-to-end RAG quality with BM25 (TREC-RAG 2024)</span>
+            </div>
+            <div class="proj-result">
+              <span class="num">+18%</span>
+              <span class="label">end-to-end RAG quality with a dense retriever</span>
+            </div>
+          </div>
+          <p>
+            Even simple pre-retrieval predictors like IDF work surprisingly well.
+            The bigger lesson: <strong>retrieval-optimal &ne; RAG-optimal</strong>.
+            The query variant that produces the best-ranked list doesn&apos;t
+            necessarily produce the best generated answer &mdash; there is a
+            fundamental utility gap between ranking and generation. So don&apos;t
+            just optimize retrieval; optimize for answer quality, and let
+            lightweight QPP route to better variants before generation.
+          </p>
+          <ul class="proj-links">
+            <li><a href="https://github.com/Narabzad/QPP-4-RAG">code</a></li>
+          </ul>
+        </div>
+      </li>
+
+    </ul>
+
+    <footer class="foot">
+      <span>&copy; 2026 Negar Arabzadeh</span>
+      <span><a href="projects.html">&larr; all projects</a></span>
+    </footer>
+
+  </main>
+</body>
+</html>
