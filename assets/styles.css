@@ -1449,6 +1449,28 @@ footer.foot a:hover { color: var(--accent); border-color: var(--accent); }
   font-family: var(--serif);
   font-weight: 500;
 }
+
+/* -------- about page: paintings grid -------- */
+.paintings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.paintings-grid img {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+  background: var(--accent-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.paintings-grid img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(31,26,24,0.1);
+}
+@media (max-width: 600px) {
+  .paintings-grid { grid-template-columns: 1fr; }
+}
 .cat-grid figcaption span[lang="fa"] {
   font-family: var(--serif);
   color: var(--ink);
