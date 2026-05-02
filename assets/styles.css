@@ -4,14 +4,14 @@
    ----------------------------------------------------------------- */
 
 :root {
-  --bg: #fbf8f2;            /* warm off-white */
-  --paper: #fffdf8;         /* slightly lighter card surface */
-  --ink: #1d1b18;           /* near-black with warmth */
-  --muted: #6e6a63;         /* secondary text */
-  --rule: #e6dfd1;          /* hairline color */
-  --accent: #c4553d;        /* terracotta */
-  --accent-soft: #f0c9bb;
-  --highlight: #f4e2a8;     /* mustard for marker highlight */
+  --bg: #faf6ee;            /* ivory */
+  --paper: #fefaf2;         /* lighter ivory card surface */
+  --ink: #1f1a18;           /* warm near-black */
+  --muted: #6c5f5a;         /* secondary text, warm taupe */
+  --rule: #e8ddd5;          /* hairline, soft blush-beige */
+  --accent: #7b1e3a;        /* burgundy */
+  --accent-soft: #e0c2c8;   /* blush */
+  --highlight: #f4e2a8;     /* mustard / antique gold for marker highlight */
 
   --serif: "Fraunces", "Iowan Old Style", "Hoefler Text", Georgia, serif;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -1481,7 +1481,7 @@ footer.foot a:hover { color: var(--accent); border-color: var(--accent); }
   font-family: var(--sans) !important;
   font-size: 12px !important;
   background: var(--ink) !important;
-  color: #fbf8f2 !important;
+  color: var(--bg) !important;
   border-radius: 4px !important;
   padding: 0 !important;
   letter-spacing: 0.04em;
