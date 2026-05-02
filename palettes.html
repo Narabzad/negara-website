@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Palette previews</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      margin: 0;
+      padding: 2rem 1.5rem 4rem;
+      background: #f3efe7;
+      color: #1d1b18;
+    }
+    h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 36px;
+      margin: 0 0 0.5rem;
+    }
+    .lede { color: #6e6a63; max-width: 720px; margin: 0 0 2.5rem; line-height: 1.55; }
+    .palettes { display: grid; gap: 1.5rem; max-width: 1100px; }
+    .palette {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 1.5rem;
+      padding: 1.25rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05);
+    }
+    @media (max-width: 720px) {
+      .palette { grid-template-columns: 1fr; }
+    }
+    .meta h2 {
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 22px;
+      margin: 0 0 0.4rem;
+    }
+    .meta p { font-size: 13px; line-height: 1.5; color: #6e6a63; margin: 0 0 0.8rem; }
+    .swatches { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 0.5rem; }
+    .swatch {
+      width: 38px; height: 38px;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,.06);
+      position: relative;
+    }
+    .swatch::after {
+      content: attr(data-hex);
+      position: absolute;
+      bottom: -16px; left: 50%; transform: translateX(-50%);
+      font-size: 9px;
+      color: #6e6a63;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .swatches { margin-bottom: 1.5rem; }
+    .demo {
+      padding: 1.5rem 1.6rem;
+      border-radius: 6px;
+      font-family: "Fraunces", Georgia, serif;
+    }
+    .demo h3 {
+      font-style: italic;
+      font-weight: 500;
+      font-size: 28px;
+      margin: 0 0 0.4rem;
+      letter-spacing: -0.01em;
+    }
+    .demo .role {
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin: 0 0 1rem;
+    }
+    .demo p {
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0 0 1rem;
+    }
+    .demo .accent-text {
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+    }
+    .demo .pill {
+      display: inline-block;
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-right: 6px;
+    }
+    .demo .rule {
+      height: 1px;
+      width: 60px;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Palette options for negara.info</h1>
+  <p class="lede">
+    Each row: name &amp; vibe, the 6 colors used (background / surface / ink / muted text / accent / soft-accent),
+    and a mini sample of how a card on your site would look. Tell me the number you like and I&apos;ll apply it across the whole site.
+  </p>
+
+  <div class="palettes">
+
+    <!-- 1: current site -->
+    <section class="palette">
+      <div class="meta">
+        <h2>1 &mdash; Terracotta &amp; cream <em>(current)</em></h2>
+        <p>Warm, paper-like, editorial. Friendly without being cute.</p>
+        <div class="swatches">
+          <div class="swatch" data-hex="bg" style="background:#fbf8f2;"></div>
+          <div class="swatch" data-hex="paper" style="background:#fffdf8;"></div>
+          <div class="swatch" data-hex="ink" style="background:#1d1b18;"></div>
+          <div class="swatch" data-hex="muted" style="background:#6e6a63;"></div>
+          <div class="swatch" data-hex="accent" style="background:#c4553d;"></div>
+          <div class="swatch" data-hex="soft" style="background:#f0c9bb;"></div>
+        </div>
+      </div>
+      <div class="demo" style="background:#fbf8f2; color:#1d1b18;">
+        <h3>Negar <span class="accent-text" style="color:#c4553d;">Arabzadeh</span></h3>
+        <p class="role" style="color:#6e6a63;">Postdoctoral Fellow at UC Berkeley</p>
+        <p>Information retrieval and the evaluation of large language models.</p>
+        <span class="pill" style="background:#f0c9bb; color:#1d1b18;">RAG</span>
+        <span class="pill" style="background:#fffdf8; color:#c4553d; border:1px solid #c4553d;">QPP</span>
+        <div class="rule" style="background:#c4553d;"></div>
+      </div>
+    </section>
+
+    <!-- 2: forest & oat -->
+    <section class="palette">
+      <div class="meta">
+        <h2>2 &mdash; Forest &amp; oat</h2>
+        <p>Earthy and scholarly. Same warmth, less &ldquo;orange.&rdquo;</p>
+        <div class="swatches">
+          <div class="swatch" data-hex="bg" style="background:#f7f3ea;"></div>
+          <div class="swatch" data-hex="paper" style="background:#fcfaf3;"></div>
+          <div class="swatch" data-hex="ink" style="background:#1f2419;"></div>
+          <div class="swatch" data-hex="muted" style="background:#6b6f5f;"></div>
+          <div class="swatch" data-hex="accent" style="background:#4a6741;"></div>
+          <div class="swatch" data-hex="soft" style="background:#c5d2bc;"></div>
+        </div>
+      </div>
+      <div class="demo" style="background:#f7f3ea; color:#1f2419;">
+        <h3>Negar <span class="accent-text" style="color:#4a6741;">Arabzadeh</span></h3>
+        <p class="role" style="color:#6b6f5f;">Postdoctoral Fellow at UC Berkeley</p>
+        <p>Information retrieval and the evaluation of large language models.</p>
+        <span class="pill" style="background:#c5d2bc; color:#1f2419;">RAG</span>
+        <span class="pill" style="background:#fcfaf3; color:#4a6741; border:1px solid #4a6741;">QPP</span>
+        <div class="rule" style="background:#4a6741;"></div>
+      </div>
+    </section>
+
+    <!-- 3: deep navy -->
+    <section class="palette">
+      <div class="meta">
+        <h2>3 &mdash; Navy &amp; cream</h2>
+        <p>Classic academic. Trustworthy, &ldquo;serious paper&rdquo; energy.</p>
+        <div class="swatches">
+          <div class="swatch" data-hex="bg" style="background:#fcfaf5;"></div>
+          <div class="swatch" data-hex="paper" style="background:#ffffff;"></div>
+          <div class="swatch" data-hex="ink" style="background:#14213d;"></div>
+          <div class="swatch" data-hex="muted" style="background:#5b6478;"></div>
+          <div class="swatch" data-hex="accent" style="background:#1d3557;"></div>
+          <div class="swatch" data-hex="soft" style="background:#c8d3e0;"></div>
+        </div>
+      </div>
+      <div class="demo" style="background:#fcfaf5; color:#14213d;">
+        <h3>Negar <span class="accent-text" style="color:#1d3557;">Arabzadeh</span></h3>
+        <p class="role" style="color:#5b6478;">Postdoctoral Fellow at UC Berkeley</p>
+        <p>Information retrieval and the evaluation of large language models.</p>
+        <span class="pill" style="background:#c8d3e0; color:#14213d;">RAG</span>
+        <span class="pill" style="background:#ffffff; color:#1d3557; border:1px solid #1d3557;">QPP</span>
+        <div class="rule" style="background:#1d3557;"></div>
+      </div>
+    </section>
+
+    <!-- 4: mulberry -->
+    <section class="palette">
+      <div class="meta">
+        <h2>4 &mdash; Mulberry &amp; blush</h2>
+        <p>Distinctive without being loud. Warm but cooler than terracotta.</p>
+        <div class="swatches">
+          <div class="swatch" data-hex="bg" style="background:#faf6f3;"></div>
+          <div class="swatch" data-hex="paper" style="background:#fffaf7;"></div>
+          <div class="swatch" data-hex="ink" style="background:#1d1518;"></div>
+          <div class="swatch" data-hex="muted" style="background:#6f6166;"></div>
+          <div class="swatch" data-hex="accent" style="background:#6b2c39;"></div>
+          <div class="swatch" data-hex="soft" style="background:#e8c8d0;"></div>
+        </div>
+      </div>
+      <div class="demo" style="background:#faf6f3; color:#1d1518;">
+        <h3>Negar <span class="accent-text" style="color:#6b2c39;">Arabzadeh</span></h3>
+        <p class="role" style="color:#6f6166;">Postdoctoral Fellow at UC Berkeley</p>
+        <p>Information retrieval and the evaluation of large language models.</p>
+        <span class="pill" style="background:#e8c8d0; color:#1d1518;">RAG</span>
+        <span class="pill" style="background:#fffaf7; color:#6b2c39; border:1px solid #6b2c39;">QPP</span>
+        <div class="rule" style="background:#6b2c39;"></div>
+      </div>
+    </section>
+
+    <!-- 5: slate teal -->
+    <section class="palette">
+      <div class="meta">
+        <h2>5 &mdash; Slate teal &amp; paper</h2>
+        <p>Cool, clean. Modern but calm. Nice contrast on cream.</p>
+        <div class="swatches">
+          <div class="swatch" data-hex="bg" style="background:#f7f4ee;"></div>
+          <div class="swatch" data-hex="paper" style="background:#fcfaf5;"></div>
+          <div class="swatch" data-hex="ink" style="background:#1a1f23;"></div>
+          <div class="swatch" data-hex="muted" style="background:#5e6770;"></div>
+          <div class="swatch" data-hex="accent" style="background:#2a6f7e;"></div>
+          <div class="swatch" data-hex="soft" style="background:#b8d6db;"></div>
+        </div>
+      </div>
+      <div class="demo" style="background:#f7f4ee; color:#1a1f23;">
+        <h3>Negar <span class="accent-text" style="color:#2a6f7e;">Arabzadeh</span></h3>
+        <p class="role" style="color:#5e6770;">Postdoctoral Fellow at UC Berkeley</p>
+        <p>Information retrieval and the evaluation of large language models.</p>
+        <span class="pill" style="background:#b8d6db; color:#1a1f23;">RAG</span>
+        <span class="pill" style="background:#fcfaf5; color:#2a6f7e; border:1px solid #2a6f7e;">QPP</span>
+        <div class="rule" style="background:#2a6f7e;"></div>
+      </div>
+    </section>
+
+    <!-- 6: ochre -->
+    <section class="palette">
+      <div class="meta">
+        <h2>6 &mdash; Ochre &amp; oat</h2>
+        <p>Editorial / vintage textbook. Warm gold accent on cream.</p>
+        <div class="swatches">
+          <div class="swatch" data-hex="bg" style="background:#fbf6eb;"></div>
+          <div class="swatch" data-hex="paper" style="background:#fefaef;"></div>
+          <div class="swatch" data-hex="ink" style="background:#1f1c19;"></div>
+          <div class="swatch" data-hex="muted" style="background:#6c655b;"></div>
+          <div class="swatch" data-hex="accent" style="background:#b07d3c;"></div>
+          <div class="swatch" data-hex="soft" style="background:#ead9b8;"></div>
+        </div>
+      </div>
+      <div class="demo" style="background:#fbf6eb; color:#1f1c19;">
+        <h3>Negar <span class="accent-text" style="color:#b07d3c;">Arabzadeh</span></h3>
+        <p class="role" style="color:#6c655b;">Postdoctoral Fellow at UC Berkeley</p>
+        <p>Information retrieval and the evaluation of large language models.</p>
+        <span class="pill" style="background:#ead9b8; color:#1f1c19;">RAG</span>
+        <span class="pill" style="background:#fefaef; color:#b07d3c; border:1px solid #b07d3c;">QPP</span>
+        <div class="rule" style="background:#b07d3c;"></div>
+      </div>
+    </section>
+
+    <!-- 7: burgundy -->
+    <section class="palette">
+      <div class="meta">
+        <h2>7 &mdash; Burgundy &amp; ivory</h2>
+        <p>Rich, formal, &ldquo;CV-on-good-paper&rdquo; feel.</p>
+        <div class="swatches">
+          <div class="swatch" data-hex="bg" style="background:#faf6ee;"></div>
+          <div class="swatch" data-hex="paper" style="background:#fefaf2;"></div>
+          <div class="swatch" data-hex="ink" style="background:#1f1a18;"></div>
+          <div class="swatch" data-hex="muted" style="background:#6c5f5a;"></div>
+          <div class="swatch" data-hex="accent" style="background:#7b1e3a;"></div>
+          <div class="swatch" data-hex="soft" style="background:#e0c2c8;"></div>
+        </div>
+      </div>
+      <div class="demo" style="background:#faf6ee; color:#1f1a18;">
+        <h3>Negar <span class="accent-text" style="color:#7b1e3a;">Arabzadeh</span></h3>
+        <p class="role" style="color:#6c5f5a;">Postdoctoral Fellow at UC Berkeley</p>
+        <p>Information retrieval and the evaluation of large language models.</p>
+        <span class="pill" style="background:#e0c2c8; color:#1f1a18;">RAG</span>
+        <span class="pill" style="background:#fefaf2; color:#7b1e3a; border:1px solid #7b1e3a;">QPP</span>
+        <div class="rule" style="background:#7b1e3a;"></div>
+      </div>
+    </section>
+
+    <!-- 8: sage -->
+    <section class="palette">
+      <div class="meta">
+        <h2>8 &mdash; Sage &amp; sand</h2>
+        <p>Soft, modern, calm. Easy on the eyes for long pages.</p>
+        <div class="swatches">
+          <div class="swatch" data-hex="bg" style="background:#f7f4ec;"></div>
+          <div class="swatch" data-hex="paper" style="background:#fdfaf2;"></div>
+          <div class="swatch" data-hex="ink" style="background:#232722;"></div>
+          <div class="swatch" data-hex="muted" style="background:#6a6f64;"></div>
+          <div class="swatch" data-hex="accent" style="background:#6f8569;"></div>
+          <div class="swatch" data-hex="soft" style="background:#cdd7c1;"></div>
+        </div>
+      </div>
+      <div class="demo" style="background:#f7f4ec; color:#232722;">
+        <h3>Negar <span class="accent-text" style="color:#6f8569;">Arabzadeh</span></h3>
+        <p class="role" style="color:#6a6f64;">Postdoctoral Fellow at UC Berkeley</p>
+        <p>Information retrieval and the evaluation of large language models.</p>
+        <span class="pill" style="background:#cdd7c1; color:#232722;">RAG</span>
+        <span class="pill" style="background:#fdfaf2; color:#6f8569; border:1px solid #6f8569;">QPP</span>
+        <div class="rule" style="background:#6f8569;"></div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
