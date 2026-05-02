@@ -90,4 +90,3 @@ Any static host works:
 - England and Scotland both map to the ISO code `GB`, so the map highlights 24 unique regions even though the visit list says 25. The numbered list shows all 25.
 - A few publication links from the original Wix export pointed to the wrong PDF (the same EMNLP 2024 anthology URL was attached to multiple papers — likely a scraping artifact). Those wrong links were dropped; titles without an `<a>` wrapper need a correct PDF/arXiv URL added.
 - The two `Screenshot 2022-08-25 ...avif` files in `assets/` are not used yet — tell me what they are and I'll place them.
-
