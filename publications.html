@@ -117,12 +117,19 @@
       </svg>
     </div>
 
-    <header style="margin-bottom: 3.5rem;">
+    <header style="margin-bottom: 2rem;">
       <p class="subtitle" style="margin-bottom: 0.6rem;">books, journals, conference papers</p>
       <h1 style="font-size: clamp(40px, 6vw, 56px); margin-bottom: 1rem;">
         Publi<span class="accent">cations</span>.
       </h1>
     </header>
+
+    <div class="pub-search-wrap">
+      <input type="search" id="pub-search" class="pub-search"
+             placeholder="Search by title, author, or venue&hellip;"
+             autocomplete="off" spellcheck="false">
+      <span class="pub-search-status" id="pub-search-status" aria-live="polite"></span>
+    </div>
 
     <!-- ======================== BOOKS ======================== -->
     <section class="pub-year">
@@ -860,5 +867,42 @@
     </footer>
 
   </main>
+
+  <script>
+    (function () {
+      const input = document.getElementById('pub-search');
+      const status = document.getElementById('pub-search-status');
+      if (!input) return;
+      const items = Array.from(document.querySelectorAll('.pub-item'));
+      const years = Array.from(document.querySelectorAll('.pub-year'));
+      const totalCount = items.length;
+
+      // Cache lowercased text per item for faster filtering.
+      items.forEach(it => { it.dataset.search = it.textContent.toLowerCase(); });
+
+      function apply() {
+        const q = input.value.trim().toLowerCase();
+        let visible = 0;
+        items.forEach(it => {
+          const match = !q || it.dataset.search.includes(q);
+          it.hidden = !match;
+          if (match) visible++;
+        });
+        years.forEach(y => {
+          const anyVisible = y.querySelector('.pub-item:not([hidden])');
+          y.hidden = !anyVisible;
+        });
+        if (!q) {
+          status.textContent = '';
+        } else if (visible === 0) {
+          status.textContent = 'No matches.';
+        } else {
+          status.textContent = visible + ' of ' + totalCount + ' shown';
+        }
+      }
+
+      input.addEventListener('input', apply);
+    })();
+  </script>
 </body>
 </html>
