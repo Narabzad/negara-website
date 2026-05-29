@@ -126,7 +126,7 @@
 
     <div class="pub-search-wrap">
       <input type="search" id="pub-search" class="pub-search"
-             placeholder="Search by title, author, or venue&hellip;"
+             placeholder="Search by title&hellip;"
              autocomplete="off" spellcheck="false">
       <span class="pub-search-status" id="pub-search-status" aria-live="polite"></span>
     </div>
@@ -877,8 +877,11 @@
       const years = Array.from(document.querySelectorAll('.pub-year'));
       const totalCount = items.length;
 
-      // Cache lowercased text per item for faster filtering.
-      items.forEach(it => { it.dataset.search = it.textContent.toLowerCase(); });
+      // Cache lowercased title text per item for faster filtering.
+      items.forEach(it => {
+        const title = it.querySelector('.pub-title');
+        it.dataset.search = (title ? title.textContent : '').toLowerCase();
+      });
 
       function apply() {
         const q = input.value.trim().toLowerCase();
