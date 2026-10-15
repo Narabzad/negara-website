@@ -26,7 +26,7 @@ assets/
   styles.css                              all styling
   favicon.svg
   photo_2022-08-25_15-56-56.avif          portrait
-  CV_Negar_arabzadeh_April_2026.pdf
+  CV_Negar_arabzadeh_October_2026.pdf
   ...
 ```
 
@@ -62,7 +62,7 @@ publication year markers, and basically anything that pops. Try
 
 ### CV
 
-Replace `assets/CV_Negar_arabzadeh_April_2026.pdf` with your latest CV
+Replace `assets/CV_Negar_arabzadeh_October_2026.pdf` with your latest CV
 and update the filename in: `index.html`, `talks.html`,
 `research-experience.html`, `contact.html`.
 (Search for `CV_Negar_arabzadeh` and replace.)
